@@ -3,13 +3,21 @@ using ProyectoBiblioteca.Enums;
 
 namespace ProyectoBiblioteca.Services
 {
+    /// <summary>
+    /// Servicio encargado de gestionar los usuarios de la biblioteca,
+    /// incluyendo registro, inicio de sesión, edición, eliminación y roles.
+    /// </summary>
     public class UsuarioService
     {
+        // Lista de usuarios registrados en el sistema.
         private List<Usuario> usuarios = new List<Usuario>();
+
+        // Contador para asignar IDs únicos a los usuarios.
         private int idCounter = 1;
 
-
-        // Método para crear un usuario administrador por defecto
+        /// <summary>
+        /// Crea un usuario administrador por defecto al iniciar el sistema.
+        /// </summary>
         public void CrearUsuarioAdmin()
         {
             usuarios.Add(new Usuario
@@ -26,6 +34,9 @@ namespace ProyectoBiblioteca.Services
             Console.WriteLine("Usuario administrador creado.");
         }
 
+        /// <summary>
+        /// Permite registrar un nuevo usuario lector solicitando datos por consola.
+        /// </summary>
         public void RegistrarUsuario()
         {
             Console.Write("Nombre: ");
@@ -51,6 +62,9 @@ namespace ProyectoBiblioteca.Services
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Método de autenticación de usuarios. Redirige al menú correspondiente según el tipo de usuario.
+        /// </summary>
         public void Login(LibroService libroService, PrestamoService prestamoService)
         {
             Console.Write("Email: ");
@@ -71,9 +85,11 @@ namespace ProyectoBiblioteca.Services
                 MenuAdmin(libroService, this, prestamoService);
             else
                 MenuLector(user, libroService, prestamoService);
-        
         }
 
+        /// <summary>
+        /// Muestra el menú de opciones para usuarios administradores.
+        /// </summary>
         private void MenuAdmin(LibroService libroService, UsuarioService usuarioService, PrestamoService prestamoService)
         {
             string opcion;
@@ -125,86 +141,95 @@ namespace ProyectoBiblioteca.Services
             } while (opcion != "0");
         }
 
+        /// <summary>
+        /// Submenú de gestión de libros.
+        /// </summary>
         private void MenuGestionLibros(LibroService libroService)
-{
-    string opcion;
-    do
-    {
-        Console.Clear();
-        Console.WriteLine("=== Gestión de libros ===");
-        Console.WriteLine("1. Agregar libro");
-        Console.WriteLine("2. Editar libro");
-        Console.WriteLine("3. Eliminar libro");
-        Console.WriteLine("4. Consultar libros");
-        Console.WriteLine("0. Volver");
-        Console.Write("Opción: ");
-        opcion = Console.ReadLine();
-
-        switch (opcion)
         {
-            case "1":
-                libroService.AgregarLibro();
-                break;
-            case "2":
-                libroService.EditarLibro();
-                break;
-            case "3":
-                libroService.EliminarLibro();
-                break;
-            case "4":
-                libroService.MostrarLibros();
-                Console.ReadKey();
-                break;
-            case "0":
-                break;
-            default:
-                Console.WriteLine("Opción inválida.");
-                Console.ReadKey();
-                break;
+            string opcion;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("=== Gestión de libros ===");
+                Console.WriteLine("1. Agregar libro");
+                Console.WriteLine("2. Editar libro");
+                Console.WriteLine("3. Eliminar libro");
+                Console.WriteLine("4. Consultar libros");
+                Console.WriteLine("0. Volver");
+                Console.Write("Opción: ");
+                opcion = Console.ReadLine();
+
+                switch (opcion)
+                {
+                    case "1":
+                        libroService.AgregarLibro();
+                        break;
+                    case "2":
+                        libroService.EditarLibro();
+                        break;
+                    case "3":
+                        libroService.EliminarLibro();
+                        break;
+                    case "4":
+                        libroService.MostrarLibros();
+                        Console.ReadKey();
+                        break;
+                    case "0":
+                        break;
+                    default:
+                        Console.WriteLine("Opción inválida.");
+                        Console.ReadKey();
+                        break;
+                }
+            } while (opcion != "0");
         }
-    } while (opcion != "0");
-}
 
-private void MenuGestionCategorias(LibroService libroService)
-{
-    string opcion;
-    do
-    {
-        Console.Clear();
-        Console.WriteLine("=== Gestión de categorías ===");
-        Console.WriteLine("1. Agregar categoría");
-        Console.WriteLine("2. Editar categoría");
-        Console.WriteLine("3. Eliminar categoría");
-        Console.WriteLine("4. Consultar categorías");
-        Console.WriteLine("0. Volver");
-        Console.Write("Opción: ");
-        opcion = Console.ReadLine();
-
-        switch (opcion)
+        /// <summary>
+        /// Submenú de gestión de categorías.
+        /// </summary>
+        private void MenuGestionCategorias(LibroService libroService)
         {
-            case "1":
-                libroService.AgregarCategoria();
-                break;
-            case "2":
-                libroService.EditarCategoria();
-                break;
-            case "3":
-                libroService.EliminarCategoria();
-                break;
-            case "4":
-                libroService.MostrarCategorias();
-                Console.ReadKey();
-                break;
-            case "0":
-                break;
-            default:
-                Console.WriteLine("Opción inválida.");
-                Console.ReadKey();
-                break;
-        }
-    } while (opcion != "0");
-}
+            string opcion;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("=== Gestión de categorías ===");
+                Console.WriteLine("1. Agregar categoría");
+                Console.WriteLine("2. Editar categoría");
+                Console.WriteLine("3. Eliminar categoría");
+                Console.WriteLine("4. Consultar categorías");
+                Console.WriteLine("0. Volver");
+                Console.Write("Opción: ");
+                opcion = Console.ReadLine();
 
+                switch (opcion)
+                {
+                    case "1":
+                        libroService.AgregarCategoria();
+                        break;
+                    case "2":
+                        libroService.EditarCategoria();
+                        break;
+                    case "3":
+                        libroService.EliminarCategoria();
+                        break;
+                    case "4":
+                        libroService.MostrarCategorias();
+                        Console.ReadKey();
+                        break;
+                    case "0":
+                        break;
+                    default:
+                        Console.WriteLine("Opción inválida.");
+                        Console.ReadKey();
+                        break;
+                }
+            } while (opcion != "0");
+        }
+
+        /// <summary>
+        /// Submenú para la gestión de usuarios.
+        /// </summary>
         private void MenuGestionUsuarios(UsuarioService usuarioService)
         {
             string opcion;
@@ -241,6 +266,9 @@ private void MenuGestionCategorias(LibroService libroService)
             } while (opcion != "0");
         }
 
+        /// <summary>
+        /// Muestra todos los usuarios registrados en el sistema.
+        /// </summary>
         public void ListarUsuarios()
         {
             if (usuarios.Count == 0)
@@ -257,7 +285,9 @@ private void MenuGestionCategorias(LibroService libroService)
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// Permite editar el nombre y correo electrónico de un usuario existente.
+        /// </summary>
         public void EditarUsuario()
         {
             Console.Write("ID del usuario a editar: ");
@@ -270,7 +300,6 @@ private void MenuGestionCategorias(LibroService libroService)
                     user.Nombre = Console.ReadLine();
                     Console.Write("Nuevo email: ");
                     user.Email = Console.ReadLine();
-
 
                     Console.WriteLine("Usuario actualizado.");
                 }
@@ -286,7 +315,9 @@ private void MenuGestionCategorias(LibroService libroService)
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// Permite eliminar un usuario por ID.
+        /// </summary>
         public void EliminarUsuario()
         {
             Console.Write("ID del usuario a eliminar: ");
@@ -310,7 +341,9 @@ private void MenuGestionCategorias(LibroService libroService)
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// Asigna un nuevo rol a un usuario o permite actualizar su perfil.
+        /// </summary>
         public void AsignarRolesYActualizarPerfil()
         {
             Console.Write("ID del usuario para asignar rol o actualizar perfil: ");
@@ -348,7 +381,9 @@ private void MenuGestionCategorias(LibroService libroService)
             Console.ReadKey();
         }
 
-
+        /// <summary>
+        /// Muestra el menú para usuarios lectores y sus opciones.
+        /// </summary>
         private void MenuLector(Usuario usuario, LibroService libroService, PrestamoService prestamoService)
         {
             string opcion;
@@ -433,10 +468,13 @@ private void MenuGestionCategorias(LibroService libroService)
 
             } while (opcion != "0");
         }
+
+        /// <summary>
+        /// Busca un usuario por su ID.
+        /// </summary>
         public Usuario ObtenerUsuarioPorId(int id)
         {
             return usuarios.FirstOrDefault(u => u.UsuarioID == id);
         }
-
     }
 }

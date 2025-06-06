@@ -8,31 +8,24 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\keyri\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\visra\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\keyri\\OneDrive\\Desktop\\Proyecto\\Proyecto_Biblioteca\\SistemaBiblioteca\\SistemaBiblioteca.csproj",
+      "projectUniqueName": "C:\\Users\\visra\\OneDrive\\Escritorio\\Ejercicio de Defensa\\Proyecto_Biblioteca\\SistemaBiblioteca\\SistemaBiblioteca.csproj",
       "projectName": "SistemaBiblioteca",
-      "projectPath": "C:\\Users\\keyri\\OneDrive\\Desktop\\Proyecto\\Proyecto_Biblioteca\\SistemaBiblioteca\\SistemaBiblioteca.csproj",
-      "packagesPath": "C:\\Users\\keyri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\keyri\\OneDrive\\Desktop\\Proyecto\\Proyecto_Biblioteca\\SistemaBiblioteca\\obj\\",
+      "projectPath": "C:\\Users\\visra\\OneDrive\\Escritorio\\Ejercicio de Defensa\\Proyecto_Biblioteca\\SistemaBiblioteca\\SistemaBiblioteca.csproj",
+      "packagesPath": "C:\\Users\\visra\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\visra\\OneDrive\\Escritorio\\Ejercicio de Defensa\\Proyecto_Biblioteca\\SistemaBiblioteca\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\keyri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\visra\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -51,7 +44,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -72,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
