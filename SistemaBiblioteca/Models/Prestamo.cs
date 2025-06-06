@@ -10,7 +10,7 @@ namespace ProyectoBiblioteca.Models
         public Libro Libro { get; set; }
         public Usuario Usuario { get; set; }
         public DateTime FechaPrestamo { get; set; }
-        public DateTime FechaDevolucion { get; set; }
+        public DateTime? FechaDevolucion { get; set; }
         public DateTime? FechaDevolucionReal { get; set; }
         public EstadoPrestamo Estado { get; set; }
     }

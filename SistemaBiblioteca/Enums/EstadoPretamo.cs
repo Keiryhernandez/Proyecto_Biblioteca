@@ -4,6 +4,7 @@ namespace ProyectoBiblioteca.Enums
     {
         EN_CURSO,
         DEVUELTO,
-        ATRASADO
+        ATRASADO,
+        SOLICITADO
     }
 }
